@@ -1,8 +1,11 @@
 
 def index(req):
 
+    form = {'name': 'jakub', 'sure_name': 'pas'}
+
     form = req.form
     first_name = form['name']
+    rank = form['rank']
     return """
     <html lang="pl">
 <head>
@@ -10,7 +13,7 @@ def index(req):
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
- """ + first_name + """
+ """ + first_name + """ ala ma kota ocena: """ + rank + """
 </body>
 </html>
     """
