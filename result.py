@@ -14,8 +14,24 @@ def index(req):
     city = info['city']
     rank = info['rank']
 
-    if not all ((first_name, last_name,city,rank)):
-        return 'Prosze uzupełnić wszystkie pola'
+    if not all((first_name, last_name, city, rank)):
+        return '''
+<html lang="pl">
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="style.css" />
+<head>
+<body>
+    <div class="wrapper">
+          <h1>Ocena strony</h1>
+          <div class="wrapper-content contact">
+                <hr>
+                Prosze uzupełnić wszystkie pola<p>
+
+        </div>
+    <div>
+</body>
+</html>'''
 
     #database connection
     conn = sqlite3.connect('/var/www/aga/ranks.db')
@@ -64,4 +80,3 @@ def index(req):
     <div>
 </body>
 </html>
-"""
