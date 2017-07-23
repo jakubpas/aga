@@ -1,9 +1,7 @@
 
+def index(req):
 
-
-def index(reg):
-
-    form = reg.form
+    form = req.form
     first_name = form['name']
     return """
     <html lang="pl">
