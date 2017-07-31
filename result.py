@@ -4,7 +4,6 @@
 # import database module
 import sqlite3
 
-
 # main function
 def index(req):
 
@@ -81,4 +80,3 @@ def index(req):
     <div>
 </body>
 </html>
-"""
