@@ -4,6 +4,7 @@
 # import database module
 import sqlite3
 
+
 # main function
 def index(req):
 
@@ -33,7 +34,7 @@ def index(req):
 </body>
 </html>'''
 
-    #database connection
+    # database connection
     conn = sqlite3.connect('/var/www/aga/ranks.db')
     conn.text_factory = lambda x: unicode(x, 'utf-8', 'ignore')
     c = conn.cursor()
@@ -42,12 +43,12 @@ def index(req):
     c.execute('''CREATE TABLE IF NOT EXISTS ratings (first_name text, last_name text, city text, rank int)''')
 
     # Insert a row of data`
-    c.execute("INSERT INTO ratings  VALUES (?,?,?,?)",(first_name, last_name, city, rank))
+    c.execute("INSERT INTO ratings  VALUES (?,?,?,?)", (first_name, last_name, city, rank))
     conn.commit()
 
     # Get ranks number and average
     rating_num = str(c.execute("SELECT COUNT(*) as num FROM ratings").fetchone()[0])
-    average = str(round(c.execute("SELECT AVG(rank) as average FROM  ratings").fetchone()[0],1))
+    average = str(round(c.execute("SELECT AVG(rank) as average FROM  ratings").fetchone()[0], 1))
     conn.close()
 
 # Display result
