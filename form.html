@@ -5,19 +5,19 @@
 </head>
 <body>
 <div class="contact_form">
-<form method="post" id="rank_form">
+<form method="post" id="rank_form" action="result.py">
 <p>
 Imię
-<input id="name" name="Imię" type="text">
+<input id="name" name="name" type="text">
 <p>
 Nazwisko
-<input id="sure_name" name="Nazwisko" type="text">
+<input id="sure_name" name="sure_name" type="text">
 <p>
 Miasto
-<input id="city" name="Miasto" type="text">
+<input id="city" name="city" type="text">
 <p>
 Ocena
-<select name="ocena" id="rank">
+<select name="rank" id="rank">
 <option value="1">1</option>
 <option value="2">2</option>
 <option value="3">3</option>
@@ -27,7 +27,7 @@ Ocena
 <option value="7">7</option>
 <option value="8">8</option>
 <option value="9">9</option>
-<option value="10">10</option>
+<option value="10" selected="selected">10</option>
 </select>
 <p>
 <input id="submit" type="submit" value="Wyslij">
