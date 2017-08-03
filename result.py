@@ -79,4 +79,4 @@ def index(req):
         </div>
     <div>
 </body>
-</html>
+</html>"""
